@@ -3,6 +3,7 @@ import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 export default defineConfig(({ command }) => {
   return {
@@ -43,6 +44,7 @@ export default defineConfig(({ command }) => {
       SortCss({
         sort: 'mobile-first',
       }),
+      viteCommonjs(),
     ],
   };
 });
